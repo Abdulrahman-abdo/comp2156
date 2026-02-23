@@ -1,7 +1,8 @@
-name: CI
+name: Deploy React App COMP2156 DevOps Project CI
+
+name: Deploy React App COMP2156 DevOps Project CI
+
 on:
-  push:
-    branches: ["main"]
   pull_request:
     branches: ["main"]
 
@@ -16,10 +17,23 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "18.x"
 
       - name: Install dependencies
+        working-directory: ./spa
         run: npm install
 
+      - name: Build the app
+        working-directory: ./spa
+        run: npm run build
+
       - name: Run tests
-        run: npm test
+        working-directory: ./spa
+        run: npm run test -- --watchAll=false
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./spa/build
+          publish_branch: gh-pages
