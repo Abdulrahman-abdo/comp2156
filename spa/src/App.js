@@ -3,23 +3,15 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center", marginTop: "60px" }}>
+      <h1>COMP2156 - DevOps</h1>
+      <h2>Class Exercise 06</h2>
+      <h3>Student Name: Abdulrahman Abdo</h3>
+      <h3>Student ID: YOUR_STUDENT_ID</h3>
+      <p>Hosting SPA on GitHub Pages using GitHub Actions</p>
     </div>
   );
 }
 
+export default App;
 export default App;
