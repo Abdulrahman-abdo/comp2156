@@ -1,7 +1,5 @@
 name: Deploy React App COMP2156 DevOps Project CI
 
-name: Deploy React App COMP2156 DevOps Project CI
-
 on:
   pull_request:
     branches: ["main"]
